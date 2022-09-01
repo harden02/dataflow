@@ -69,7 +69,7 @@ def run(argv=None):
      # be run in parallel on different workers using input from the
      # previous stage of the pipeline.
      | 'String To BigQuery Row' >>
-     beam.Map(lambda s: data_ingestion.parse_method(s)) |
+     beam.Map(lambda s: data_ingestion.parsemethod(s)) |
      'Write to BigQuery' >> beam.io.Write(
          beam.io.BigQuerySink(
              # The table name is a required argument for the BigQuery sink.
