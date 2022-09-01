@@ -7,9 +7,7 @@ import re
 import apache_beam as beam
 from apache_beam.options.pipeline_options import PipelineOptions
 
-#appflow = flow.InstalledAppFlow.from_client_secrets_file(
-#   "client_secret_638231108706-0hlmq8rfajr1tdc93p5qn6hl9nq7jmit.apps.googleusercontent.com.json", scopes=["storage.objects.get, storage.buckets.update"]
-#)
+
 
 class DataIngest:
     def parsemethod(self, str_input):
@@ -37,14 +35,14 @@ def run(argv=None):
         'a file in a Google Storage Bucket.',
         # This example file contains a total of only 10 lines.
         # Useful for developing on a small set of data.
-        default='gs://test-8309335/customer.csv')
+        default='gs://test-hardenj/customer.csv')
 
     # This defaults to the dataset in your BigQuery project.
     parser.add_argument('--output',
                         dest='output',
                         required=False,
                         help='Output BQ table to write results to.',
-                        default='dmn01-rskcda-ide-08-4a92:Test_8309335.Test')
+                        default='fair-solution-361210.lake')
 
     # Parse arguments from the command line.
     known_args, pipeline_args = parser.parse_known_args(argv)
